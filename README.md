@@ -28,10 +28,10 @@ $$c^2 = \sqrt (a^2 + b^2) $$
 
 	- first we need $$\Delta x$$ and $$\Delta y$$
 	
-	- $$\Delta x = x_f - x_i$$
-	- $$\Delta y = y_f - y_i$$
+	- $$\Delta x = x_f - x_i $$
+	- $$\Delta y = y_f - y_i $$
 	- Once we have that we can check if those points colide with the radius of the circle by doing this.
-	- $$ \Delta x^2 + \Delta y^2 \leq r^2 $$
+	- $$\Delta x^2 + \Delta y^2 \leq r^2 $$
 	- And the code looks like this.
 	
 ```python
