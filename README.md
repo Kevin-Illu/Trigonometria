@@ -19,14 +19,14 @@ Now you can run this command:
 
 ### What I learned by doing.
 
-![[pytagoras.png]]
+![pytagoras.png](./assets/pytagoras.png)
 #### Things I learn doing this.
 - I learn how to draw in pyxel xD
 - Calculate the distance by doing the `pitagorazo xD` here is the formula I use to do that.
 $$c^2 = \sqrt (a^2 + b^2) $$
 - I learn to calculate the colitions on circles an a point in this case the point was my mouse :).
 
-	- first we need `$\Delta x$` y `$\Delta y$`
+	- first we need $$\Delta x$$ and $$\Delta y$$
 	
 	- $$\Delta x = x_f - x_i$$
 	- $$\Delta y = y_f - y_i$$
