@@ -1,5 +1,6 @@
 import pyxel
-from pytagoras import Plane
+
+from triangulos_circulos import Plane
 
 
 class App:
