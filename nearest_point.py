@@ -23,15 +23,15 @@ class NearestPoint:
         return nearest
 
     def draw(self):
-        # línea al más cercano
+        # line to the nearest
         pyxel.line(
             self.target.x, self.target.y, self.nearest_point.x, self.nearest_point.y, 8
         )
 
-        # target
-        pyxel.pset(self.target.x, self.target.y, 12)
+        # draw the target
+        pyxel.pset(self.target.x, self.target.y, 10)
 
-        # puntos
+        # draw the points
         for p in self.points:
             color = 3
             if p is self.nearest_point:
