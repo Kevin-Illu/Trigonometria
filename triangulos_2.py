@@ -12,9 +12,9 @@ class Trogonometria:
 
 class Point:
     def __init__(self, x=None, y=None, color=None):
-        self.x = x if x is not None else random.randint(50, 100)
-        self.y = y if y is not None else random.randint(1, 200)
-        self.color = color if color is not None else random.randint(1, 10)
+        self.x = x or random.randint(50, 100)
+        self.y = y or random.randint(1, 200)
+        self.color = color or random.randint(1, 10)
 
 
 class Triangulos2:
