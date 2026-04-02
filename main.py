@@ -1,10 +1,11 @@
 import pyxel
 
+from nearest_point import NearestPoint
 from triangulos_circulos import Triangulo1
 from triangulos_2 import Triangulos2
 
 
-planes = [Triangulos2, Triangulo1]
+planes = [NearestPoint, Triangulos2, Triangulo1]
 currentPlane = planes[0]
 
 
@@ -24,7 +25,7 @@ class App:
 
     def draw(self):
         pyxel.cls(0)
-        pyxel.text(5, 5, "Presiona Q para salir", 7)
+        pyxel.text(100, 250, "Presiona Q para salir", 7)
 
         self.plane.draw()
 
