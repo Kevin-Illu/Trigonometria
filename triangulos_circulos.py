@@ -26,7 +26,7 @@ class Pytagoras:
         return self.distance_sq(center, point) <= radius * radius
 
 
-class Plane:
+class Triangulo1:
     def __init__(self):
         self.p1 = (10, 30)
         self.p2 = (80, 140)
