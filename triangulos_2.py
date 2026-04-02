@@ -3,6 +3,10 @@ import random
 import math
 
 
+# TODO: create a way to make Point pairs
+# based on the points in the array
+
+
 class Trogonometria:
     def distance(self, p1, p2):
         dx = p2.x - p1.x
