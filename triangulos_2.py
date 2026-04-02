@@ -1,5 +1,6 @@
 import pyxel
 import random
+import math
 
 
 class Trogonometria:
@@ -8,6 +9,9 @@ class Trogonometria:
         dy = p2.y - p1.y
 
         return dx * dx + dy * dy
+
+    def distance_sqrt(self, p1, p2):
+        return math.sqrt(self.distance(p1, p2))
 
 
 class Point:
@@ -20,7 +24,7 @@ class Point:
 class Triangulos2:
     def __init__(self):
         self.points_count = 10
-        self.points = [Point() for i in range(1, self.points_count)]
+        self.points = [Point() for i in range(self.points_count)]
 
     def draw(self):
         # drawing the points
