@@ -42,6 +42,5 @@ class Circle:
         self.g = Geometry()
 
     def is_colliding(self, circle):
-        return self.g.distance_sq(self, circle) <= (self.r + circle.r) * (
-            self.r + circle.r
-        )
+        r_sum = self.r + circle.r
+        return self.g.distance_sq(self, circle) <= r_sum * r_sum
