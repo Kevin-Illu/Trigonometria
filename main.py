@@ -1,11 +1,12 @@
 import pyxel
 
+from circles import Circles
 from nearest_point import NearestPoint
 from triangulos_circulos import Triangulo1
 from triangulos_2 import Triangulos2
 
 
-planes = [NearestPoint, Triangulos2, Triangulo1]
+planes = [Circles, NearestPoint, Triangulos2, Triangulo1]
 currentPlane = planes[0]
 
 
