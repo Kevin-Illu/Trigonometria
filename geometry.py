@@ -25,6 +25,37 @@ class Geometry:
 
         return nearest
 
+    def closest_point_on_segment(self, P, A, B):
+        APx = P.x - A.x
+        APy = P.y - A.y
+
+        ABx = B.x - A.x
+        ABy = B.y - A.y
+
+        dot = APx * ABx + APy * ABy
+        len_sq = ABx * ABx + ABy * ABy
+
+        t = dot / len_sq if len_sq != 0 else 0
+
+        # clamp just limit the point to stay
+        # inside of the segment.
+        t = max(0, min(1, t))
+
+        # create a new vector that tell us
+        # where is the point projection.
+        closest_x = A.x + t * ABx
+        closest_y = A.y + t * ABy
+
+        return (closest_x, closest_y)
+
+    def distance_point_to_segment_sq(self, P, A, B):
+        cx, cy = self.closest_point_on_segment(P, A, B)
+
+        dx = P.x - cx
+        dy = P.y - cy
+
+        return dx * dx + dy * dy
+
 
 class Point:
     def __init__(self, x=None, y=None, color=None):
