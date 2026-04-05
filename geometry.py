@@ -65,13 +65,18 @@ class Point:
 
 
 class Circle:
-    def __init__(self, x=None, y=None, r=None):
+    def __init__(self, x=None, y=None, r=None, color=None):
         self.x = x if x is not None else random.randint(10, 250)
         self.y = y if y is not None else random.randint(10, 250)
         self.r = r if r is not None else random.randint(1, 5)
+        self.color = color if color is not None else random.randint(5, 11)
         self.colliding = False
         self.g = Geometry()
 
-    def is_colliding(self, circle):
+    def is_colliding_with_circle(self, circle):
         r_sum = self.r + circle.r
         return self.g.distance_sq(self, circle) <= r_sum * r_sum
+
+    def is_colliding_with_segment(self, A, B):
+        x, y = self.g.closest_point_on_segment(self, A, B)
+        return self.g.distance_sq(self, Point(x, y)) <= self.r * self.r

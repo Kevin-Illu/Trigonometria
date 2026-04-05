@@ -1,5 +1,6 @@
 import pyxel
 
+from circle_vs_segment_collisions import CircleVSSegmentCollisions
 from circles import Circles
 from distance_point_to_segment import DistancePointToSegment
 from nearest_point import NearestPoint
@@ -7,7 +8,14 @@ from triangulos_circulos import Triangulo1
 from triangulos_2 import Triangulos2
 
 
-planes = [DistancePointToSegment, Circles, NearestPoint, Triangulos2, Triangulo1]
+planes = [
+    CircleVSSegmentCollisions,
+    DistancePointToSegment,
+    Circles,
+    NearestPoint,
+    Triangulos2,
+    Triangulo1,
+]
 currentPlane = planes[0]
 
 
