@@ -22,12 +22,13 @@ class DistancePointToSegment:
 
         # drawing the closest_point
         if self.closest_point is not None:
-            # point
-            pyxel.pset(int(self.closest_point.x), int(self.closest_point.y), 8)
             # line
             pyxel.line(
                 self.p.x, self.p.y, self.closest_point.x, self.closest_point.y, 9
             )
+
+            # point
+            pyxel.pset(int(self.closest_point.x), int(self.closest_point.y), 8)
 
         # Points
         pyxel.pset(self.pa.x, self.pa.y, 8)
