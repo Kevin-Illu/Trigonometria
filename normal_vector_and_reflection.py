@@ -17,6 +17,28 @@ vertices = [
     for i in range(n)
 ]
 
+
+# This is ChatGpt Code :0
+class NormalVectorAndReflection:
+    def __init__(self):
+        self.circle = Circle(150, 150, 9, 3)
+        self.circle.vel = Vector(2, 3)
+        self.segments = [(vertices[i], vertices[(i + 1) % n]) for i in range(n)]
+
+    def update(self):
+        # aplicar colisiones contra todos los segmentos
+        for A, B in self.segments:
+            self.circle.resolve_collision_with_segment(A, B)
+
+        self.circle.update()
+
+    def draw(self):
+        for A, B in self.segments:
+            pyxel.line(A.x, A.y, B.x, B.y, 10)
+
+        pyxel.circb(self.circle.x, self.circle.y, self.circle.r, self.circle.color)
+
+
 # This is my code
 # class NormalVectorAndReflection:
 #     def __init__(self) -> None:
@@ -104,24 +126,3 @@ vertices = [
 #
 #         # move the circle
 #         self.c.update()
-
-
-# This is ChatGpt Code :0
-class NormalVectorAndReflection:
-    def __init__(self):
-        self.circle = Circle(150, 150, 9, 3)
-        self.circle.vel = Vector(2, 3)
-        self.segments = [(vertices[i], vertices[(i + 1) % n]) for i in range(n)]
-
-    def update(self):
-        # aplicar colisiones contra todos los segmentos
-        for A, B in self.segments:
-            self.circle.resolve_collision_with_segment(A, B)
-
-        self.circle.update()
-
-    def draw(self):
-        for A, B in self.segments:
-            pyxel.line(A.x, A.y, B.x, B.y, 10)
-
-        pyxel.circb(self.circle.x, self.circle.y, self.circle.r, self.circle.color)
