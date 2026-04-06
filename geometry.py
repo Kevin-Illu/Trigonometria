@@ -123,11 +123,6 @@ class Circle:
 class Vector:
     __slots__ = ("x", "y")
 
-    def iadd(self, other):
-        self.x += other.x
-        self.y += other.y
-        return self
-
     def __init__(self, x=0.0, y=0.0):
         self.x = x
         self.y = y
@@ -144,9 +139,17 @@ class Vector:
     def magnitude(self):
         return math.hypot(self.x, self.y)
 
+    def iadd(self, other):
+        self.x += other.x
+        self.y += other.y
+        return self
+
     def normalize(self):
         mag = self.magnitude()
         return Vector(self.x / mag, self.y / mag) if mag > 1e-9 else Vector(0, 0)
+
+    def dot(self, other):
+        return self.x * other.x + self.y * other.y
 
     def __repr__(self):
         return f"Vector({self.x}, {self.y})"
